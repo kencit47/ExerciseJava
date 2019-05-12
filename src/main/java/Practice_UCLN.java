@@ -3,8 +3,11 @@ import java.util.ArrayList;
 public class Practice_UCLN {
 
     public int Find_UCLN(int a, int b){
-        if(a % b == 0)
-            return a > b? b : a;
+        if(a == b)
+            return a;
+        if(a % b == 0) {
+            return a > b ? b : a;
+        }
         return a % b;
     }
 

@@ -3,6 +3,11 @@ import org.junit.Test;
 public class Pratice_UCLNTest {
     @Test
     public void TestFind_UCLN(){
-        new Practice_UCLN().Find_UCLN(168);
+        System.out.println(new Practice_UCLN().Find_UCLN(169,12));
+    }
+
+    @Test
+    public void TestFind_BCNN(){
+        System.out.println(new Practice_UCLN().Find_BCNN(168,12));
     }
 }

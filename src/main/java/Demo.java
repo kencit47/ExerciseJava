@@ -10,4 +10,8 @@ public class Demo {
     public int multiple(int x, int y){
         return x*y;
     }
+
+    public void dosomething(){
+        System.out.println("#NAMCHECK zzzzzzzzzzzzzzzzzzzzz");
+    }
 }

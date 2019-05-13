@@ -1,15 +1,18 @@
 public class PhanTichThuSo {
-    public String PhanTichThuaSo(int input){
-        String g_output = "";
-        for(int i = 2; i <= input; i++){
-            while (input % i == 0){
-                input /= i;
-                if(input==1)
-                    g_output += i;
+    public String hamPhanTichThuaSo(int Input){
+        String Output = "";
+
+        if(Input < 2)
+            return Output + Input;
+        for(int i = 2; i <= Input; i++){
+            while (Input % i == 0){
+                Input /= i;
+                if(Input==1)
+                    Output += i;
                 else
-                    g_output += i + "*";
+                    Output += i + "*";
             }
         }
-        return g_output;
+        return Output;
     }
 }

@@ -1,29 +1,29 @@
 public class PhanTichThuaSo_2 {
-    public String hamPhanTichThuaSo(int Input){
-        String Output = "";
-        if(Input < 2)
-            return Output + Input;
-        for(int i = 2; i <= Input; i++){
+    public String phanTichThuaSo(int input){
+        String output = "";
+        if(input < 2)
+            return output + input;
+        for(int i = 2; i <= input; i++){
             int count = 0;
-            while (Input % i == 0){
-                Input /= i;
+            while (input % i == 0){
+                input /= i;
                 count++;
             }
             if(count != 0){
                 if(count == 1){
-                    if(Input == 1)
-                        Output += i;
+                    if(input == 1)
+                        output += i;
                     else
-                        Output += i + "*";
+                        output += i + "*";
                 }
                 else {
-                    if(Input == 1)
-                        Output += i + "^" + count;
+                    if(input == 1)
+                        output += i + "^" + count;
                     else
-                        Output += i + "^" + count + "*";
+                        output += i + "^" + count + "*";
                 }
             }
         }
-        return Output;
+        return output;
     }
 }

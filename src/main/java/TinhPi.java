@@ -4,13 +4,15 @@ public class TinhPi {
         double pi = 0.0;
         int mauso = 1;
         double tuso = 4.0;
-        double esp = tuso/mauso - tuso/(mauso + 2);
+        double esp;
 
-        while(esp > saiso - tuso/mauso) {
+        do
+         {
+            esp = tuso/mauso - tuso/(mauso + 2);
             pi += esp;
             mauso += 4;
-            esp = tuso/mauso - tuso/(mauso + 2);
-        }
+
+        }while(esp > saiso - tuso / mauso);
         return pi + saiso;
     }
 }

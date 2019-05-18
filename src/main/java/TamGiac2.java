@@ -5,15 +5,18 @@ public class TamGiac2 {
         String type;
         double canhAB = timCanhTamGiac(x1,y1,x2,y2);
         double canhBC = timCanhTamGiac(x2,y2,x3,y3);
-        double canhAC = timCanhTamGiac(x1,y1,x3,y3);
+        double canhCA = timCanhTamGiac(x1,y1,x3,y3);
 
-        if(canhAB + canhAC > canhBC && canhAB + canhBC > canhAC && canhBC + canhAC > canhAB)
+        if(canhAB + canhCA > canhBC && canhAB + canhBC > canhCA && canhBC + canhCA > canhAB)
         {
-            chuvi = canhAB + canhAC + canhBC;
-            if(checkTamGiacVuong(canhAB,canhBC,canhAC)) {
-                type = "Tam giac can";
-            }else if(canhAB == canhBC || canhBC == canhAC || canhAB == canhAC) {
+            chuvi = canhAB + canhCA + canhBC;
+            System.out.println(canhAB);
+            System.out.println(canhCA);
+            System.out.println(canhBC);
+            if(checkTamGiacVuong(canhAB,canhBC,canhCA)) {
                 type = "Tam giac vuong";
+            }else if(canhAB == canhBC || canhBC == canhCA || canhAB == canhCA) {
+                type = "Tam giac can";
             }else {
                 type = "Tam giac thuong";
             }

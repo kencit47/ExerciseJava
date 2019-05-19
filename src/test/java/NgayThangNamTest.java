@@ -29,5 +29,6 @@ public class NgayThangNamTest {
         assertEquals(new NgayThangNam().ngayConLaiCuaNam(5,2,3001),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(5,2,3001),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(0,0,1989),"Invalid date");
+        assertEquals(new NgayThangNam().ngayConLaiCuaThang(32,13,3001),"Invalid date");
     }
 }

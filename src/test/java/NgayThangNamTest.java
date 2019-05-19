@@ -15,6 +15,7 @@ public class NgayThangNamTest {
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(19,05,2019),"12");
 
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(19,02,2000),"10");
+        assertEquals(new NgayThangNam().ngayConLaiCuaThang(19,02,2004),"10");
 
         assertEquals(new NgayThangNam().thuCuaNgay(1,1,1990),"Thu 2");
         assertEquals(new NgayThangNam().ngayConLaiCuaNam(1,1,1990),"364");
@@ -27,5 +28,6 @@ public class NgayThangNamTest {
         assertEquals(new NgayThangNam().thuCuaNgay(5,2,3001),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaNam(5,2,3001),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(5,2,3001),"Invalid date");
+        assertEquals(new NgayThangNam().ngayConLaiCuaThang(0,0,1989),"Invalid date");
     }
 }

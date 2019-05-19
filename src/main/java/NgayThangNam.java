@@ -28,15 +28,14 @@ public class NgayThangNam {
     public String thuCuaNgay(int day, int month, int year){
         if(!checkDateInvalid(day,month,year))
             return "Invalid date";
-        switch (soNgayTuDauNam1990(day, month, year) % 7){
-            case 0: return "Chu Nhat";
+        switch (soNgayTuDauNam1990(day, month, year) % 7) {
             case 1: return "Thu 2";
             case 2: return "Thu 3";
             case 3: return "Thu 4";
             case 4: return "Thu 5";
             case 5: return "Thu 6";
             case 6: return "Thu 7";
-            default: return "Invalid date";
+            default: return "Chu Nhat";
         }
     }
 

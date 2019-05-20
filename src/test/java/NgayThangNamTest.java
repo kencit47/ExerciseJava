@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import static org.junit.Assert.assertEquals;
 
 public class NgayThangNamTest {
@@ -30,5 +33,18 @@ public class NgayThangNamTest {
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(5,2,3001),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(0,0,1989),"Invalid date");
         assertEquals(new NgayThangNam().ngayConLaiCuaThang(32,13,3001),"Invalid date");
+    }
+
+    @Test
+    public void test_dayOfMonth() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        NgayThangNam obj = new NgayThangNam();
+        Method privateMethod = NgayThangNam.class.getDeclaredMethod("dayOfMonth", int.class, int.class);
+        privateMethod.setAccessible(true);
+
+        assertEquals((int) privateMethod.invoke(obj, 2, 2000),29);
+        assertEquals((int) privateMethod.invoke(obj, 2, 2004),29);
+        assertEquals((int) privateMethod.invoke(obj, 2, 2008),29);
+        assertEquals((int) privateMethod.invoke(obj, 2, 2010),28);
+        assertEquals((int) privateMethod.invoke(obj, 2, 2100),28);
     }
 }

@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class NgayThangNam {
 
     public String ngayConLaiCuaThang(int day, int month, int year){
         String result = "";
 
-        if(!checkDateInvalid(day,month,year))
+        if(checkDateValid(day,month,year))
             return "Invalid date";
         result += dayOfMonth(month,year) - day;
 
@@ -13,7 +15,7 @@ public class NgayThangNam {
     public String ngayConLaiCuaNam(int day, int month, int year){
         String result = "";
         int date = 0;
-        if(!checkDateInvalid(day,month,year))
+        if(checkDateValid(day,month,year))
             return "Invalid date";
 
         for(int i = month + 1; i <= 12; i ++){
@@ -26,16 +28,17 @@ public class NgayThangNam {
     }
 
     public String thuCuaNgay(int day, int month, int year){
-        if(!checkDateInvalid(day,month,year))
+        String[] arr = {"Thu 2", "Thu 3", "Thu 4", "Thu 5", "Thu 6", "Thu 7", "Chu Nhat"};
+        if(checkDateValid(day,month,year))
             return "Invalid date";
         switch (soNgayTuDauNam1990(day, month, year) % 7) {
-            case 1: return "Thu 2";
-            case 2: return "Thu 3";
-            case 3: return "Thu 4";
-            case 4: return "Thu 5";
-            case 5: return "Thu 6";
-            case 6: return "Thu 7";
-            default: return "Chu Nhat";
+            case 1: return arr[0];
+            case 2: return arr[1];
+            case 3: return arr[2];
+            case 4: return arr[3];
+            case 5: return arr[4];
+            case 6: return arr[5];
+            default: return arr[6];
         }
     }
 
@@ -53,8 +56,9 @@ public class NgayThangNam {
     private int soNgayTuDauNam1990(int day, int month, int year){
         return (year - 1990) * 365 + soNgayDaTroiQuaTrongNam( day, month, year);
     }
-    private boolean checkDateInvalid(int d, int m, int y){
-        return (d >= 1 && d <= 31 && m >= 1 && m <= 12 && y >= 1990 && y<= 3000);
+
+    private boolean checkDateValid(int d, int m, int y){
+        return (d < 1 || d > 31 || m < 1 || m > 12 || y < 1990 || y > 3000);
     }
 
     private int dayOfMonth(int month, int year){

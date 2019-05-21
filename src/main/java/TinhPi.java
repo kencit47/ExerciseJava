@@ -1,18 +1,19 @@
 public class TinhPi {
     public double tinhPi(){
-       final double saiso = 0.0001;
+       final double saiso = 0.00000001;
         double pi = 0.0;
-        int mauso = 1;
+        int i = 1;
         double tuso = 4.0;
         double esp;
 
         do
          {
-            esp = tuso/mauso - tuso/(mauso + 2);
+            esp = tuso/i - tuso/(i + 2);
             pi += esp;
-            mauso += 4;
+            i += 4;
 
-        }while(esp > saiso - tuso / mauso);
-        return pi + saiso;
+        }while(esp > saiso);
+
+        return pi;
     }
 }

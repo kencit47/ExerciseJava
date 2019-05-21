@@ -5,13 +5,12 @@ public class TinhBieuThuc {
         int mauso = 0;
         double valueafter = 1;
 
-        do{
+        for(int i = 0; i <= n; i++){
             result += valueafter;
             mauso++;
             valueafter *= (double) 1/mauso;
-        }while (mauso <= n);
+        }
 
         return result;
-
     }
 }

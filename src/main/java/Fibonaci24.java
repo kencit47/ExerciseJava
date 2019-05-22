@@ -3,18 +3,22 @@ import java.util.ArrayList;
 public class Fibonaci24 {
 
     public int fibonaci24(int n){
-        ArrayList<Integer> arrFibonnaci = new ArrayList<>();
+        int a = 0;
+        int b = 1;
+        int count = 0;
 
-        for(int i = 0; true; i++){
-            if(i == 0)
-                arrFibonnaci.add(0);
-            else if(i == 1)
-                arrFibonnaci.add(1);
-            else
-                arrFibonnaci.add(arrFibonnaci.get(i - 2) + arrFibonnaci.get(i - 1));
+        while (a + b <= n){
+            int index = a + b;
+            count++;
+            a = b;
+            b = index;
 
-            if(arrFibonnaci.get(i) > n)
-                return arrFibonnaci.size() - 1;
         }
+        if(n == 0)
+            count += 1;
+        if(n >= 1)
+            count += 2;
+
+        return count;
     }
 }

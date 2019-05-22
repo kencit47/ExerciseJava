@@ -3,30 +3,21 @@ import java.util.ArrayList;
 public class Fibonaci25 {
 
     public int fibonaci25(int m, int n){
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int index = 0;
+        int x = 0;
+        Integer[] arrFibonaci = {0,1};
 
-        for(int i = 0; true; i++){
-            if(i == 0)
-                arrayList.add(0);
-            else if(i == 1)
-                arrayList.add(1);
-            else
-                arrayList.add(arrayList.get(i - 2) + arrayList.get(i - 1));
-
-            if(arrayList.get(i) > n) {
-                arrayList.remove(i);
-                break;
-            }
+        while(arrFibonaci[1] + arrFibonaci[0] <= n){
+            int index = arrFibonaci[1] + arrFibonaci[0];
+            if(index >= m)
+                x++;
+            arrFibonaci[0] = arrFibonaci[1];
+            arrFibonaci[1] = index;
         }
+        if(m == 0 && n >= 1)
+            x += 2;
+        if(m == 1 || m == 0 && n == 0)
+            x += 1;
 
-        while(true){
-
-            if(arrayList.get(index) < m)
-                arrayList.remove(index);
-            else
-                return arrayList.size();
-        }
-
+        return x;
     }
 }

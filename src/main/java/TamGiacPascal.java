@@ -14,11 +14,13 @@ public class TamGiacPascal {
     }
 
     private int factorial(int n) {
-        int f;
+        int result = 1;
 
-        for(f = 1; n > 1; n--)
-            f *= n;
-        return f;
+        for(int i = 2; i <= n; i++){
+            result *= i;
+        }
+
+        return result;
     }
 
     private int ncr(int n,int i) {

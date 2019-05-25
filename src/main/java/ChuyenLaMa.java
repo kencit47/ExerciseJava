@@ -23,24 +23,25 @@ public class ChuyenLaMa {
 
     private int doiLaMa(char a) {
         char[] arr = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+        int[] arrInt = {1, 5, 10, 50, 100, 500, 1000};
 
         for(int i = 0; i < arr.length; i++){
             if(a == arr[i]){
                 switch (i){
                     case 0:
-                        return 1;
+                        return arrInt[i];
                     case 1:
-                        return 5;
+                        return arrInt[i];
                     case 2:
-                        return 10;
+                        return arrInt[i];
                     case 3:
-                        return 50;
+                        return arrInt[i];
                     case 4:
-                        return 100;
+                        return arrInt[i];
                     case 5:
-                        return 500;
+                        return arrInt[i];
                     default:
-                        return 1000;
+                        return arrInt[i];
                 }
             }
         }

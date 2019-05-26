@@ -1,49 +1,43 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 public class ChuyenLaMa {
 
     public int laMaToNhiPhan(String a){
         int result = 0;
 
         for (int i = 0; i < a.length(); i++){
-
-            if(doiLaMa(a.charAt(i)) == 0)
+            char index = a.charAt(i);
+            if(doiLaMa(index) == 0)
                 return -1;
 
-            if(a.charAt(i) != a.charAt(a.length() - 1)) {
-                if(doiLaMa(a.charAt(i)) < doiLaMa(a.charAt(i + 1)))
-                    result -= doiLaMa(a.charAt(i));
+            if(index != a.charAt(a.length() - 1)) {
+                if(doiLaMa(index) < doiLaMa(a.charAt(i + 1)))
+                    result -= doiLaMa(index);
                 else
-                    result += doiLaMa(a.charAt(i));
+                    result += doiLaMa(index);
             }
             else
-                result += doiLaMa(a.charAt(i));
+                result += doiLaMa(index);
         }
 
         return result;
     }
 
     private int doiLaMa(char a) {
-        char[] arr = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
-        int[] arrInt = {1, 5, 10, 50, 100, 500, 1000};
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        hashMap.put('I',1);
+        hashMap.put('V',5);
+        hashMap.put('X',10);
+        hashMap.put('L',50);
+        hashMap.put('C',100);
+        hashMap.put('D',500);
+        hashMap.put('M',1000);
 
-        for(int i = 0; i < arr.length; i++){
-            if(a == arr[i]){
-                switch (i){
-                    case 0:
-                        return arrInt[i];
-                    case 1:
-                        return arrInt[i];
-                    case 2:
-                        return arrInt[i];
-                    case 3:
-                        return arrInt[i];
-                    case 4:
-                        return arrInt[i];
-                    case 5:
-                        return arrInt[i];
-                    default:
-                        return arrInt[i];
-                }
-            }
+        for(Map.Entry<Character, Integer> entry : hashMap.entrySet()){
+            if(entry.getKey() == a)
+                   return entry.getValue();
         }
         return 0;
     }

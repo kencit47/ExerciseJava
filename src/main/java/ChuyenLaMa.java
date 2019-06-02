@@ -35,10 +35,6 @@ public class ChuyenLaMa {
         hashMap.put('D',500);
         hashMap.put('M',1000);
 
-        for(Map.Entry<Character, Integer> entry : hashMap.entrySet()){
-            if(entry.getKey() == a)
-                   return entry.getValue();
-        }
-        return 0;
+        return hashMap.containsKey(a)? hashMap.get(a) : 0;
     }
 }

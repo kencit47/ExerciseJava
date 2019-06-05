@@ -15,7 +15,7 @@ public class Arr_5_TongSoNguyenTo {
         int count = 0;
         if(a <= 2)
             return false;
-        for(int i = 2; i <= Math.sqrt(a); i++){
+        for(int i = 2; i <= a/2; i++){
             if(a % i == 0)
                 count++;
         }
